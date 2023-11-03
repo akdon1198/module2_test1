@@ -10,6 +10,7 @@ function App() {
   const[groupname, setgroupname] = useState("")
   const[groupcolor, setgroupcolor] = useState(color1)
   const[groupnumber, setgroupnumber] = useState(null)
+  const[noteorselected, setnoteorselected] = useState(true)
   let TOP_MIDDLE_TOGGLE = "top";
   function handlemiddle(){
     if(TOP_MIDDLE_TOGGLE == "create") TOP_MIDDLE_TOGGLE = "top"
@@ -37,9 +38,12 @@ function App() {
   return (
    <div className="main-cont">
       <NoteCategory setpopuptoggle={setpopuptoggle} popuptoggle={popuptoggle} groupdata = {groupdata}
-      setgroupnumber = {setgroupnumber} groupnumber={groupnumber}
+      setgroupnumber = {setgroupnumber} groupnumber={groupnumber} noteorselected = {noteorselected}
+      setnoteorselected = {setnoteorselected}
       />
-      <SelectedNote groupdata = {groupdata} groupnumber = {groupnumber} setgroupdata = {setgroupdata}/>
+      <SelectedNote groupdata = {groupdata} groupnumber = {groupnumber} setgroupdata = {setgroupdata}
+      noteorselected={noteorselected} setnoteorselected={setnoteorselected}
+      />
       <div className='notesmodal-popup-cont' style={popuptoggle ? {}:{display:"none"}} onClick={handletop}>
         <div className='notesmodal-popup' onClick={handlemiddle}>
             <h2>Create New Notes group</h2>

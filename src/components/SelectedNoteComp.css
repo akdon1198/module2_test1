@@ -2,8 +2,6 @@
 .selectednote-cont{
     width: 100%;
     background-color: #F7ECDC;
-    display: flex;
-    /* display: none; */
     font-weight: 500;
     flex-direction: column;
 }
@@ -90,7 +88,7 @@
 @media (min-width: 40em){
     /* Background Container */
     .background-cont{
-        display: flex;
+        display: flex !important;
         width: 80%;
         flex-direction: column;
         justify-content: center;
@@ -118,6 +116,7 @@
     }
     .selectednote-cont{
         width: 80%;
+        display: flex !important;
     }
     .selectednote-cont .top > img{
         display: none;

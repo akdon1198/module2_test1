@@ -1,11 +1,9 @@
 /* Main Container */
 .notecat-cont{
     width: 100%;
-    display: flex;
     flex-direction: column;
     padding: 1rem;
     font-weight: 500;
-    /* display: none;   */
 }
 
 /* Title */
@@ -39,6 +37,7 @@
     .notecat-cont{
         width: 20%;
         padding-right: 0px;
+        display: flex !important;
     }
     .notecat-cont .title{
         margin-bottom: 2rem;

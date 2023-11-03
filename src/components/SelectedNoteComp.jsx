@@ -5,7 +5,7 @@ import backgroundimg from "../images/backgroundimg.png"
 import lock from "../images/lock.png"
 import { useEffect, useState } from "react"
 import { montharr } from "../Constant"
-function SelectedNote({groupdata, groupnumber, setgroupdata}){    
+function SelectedNote({groupdata, groupnumber, setgroupdata, noteorselected, setnoteorselected}){    
     const[text, settext] = useState("")
     function setnote(){
         // CREATING MINUTE FORMAT
@@ -32,9 +32,9 @@ function SelectedNote({groupdata, groupnumber, setgroupdata}){
     }, [groupdata[groupnumber]?.notesarr])
 
     return groupnumber != null? (
-        <div className="selectednote-cont">
+        <div className="selectednote-cont" style={noteorselected ? {display:"none"}:{display:"flex"}}>
            <div className="top">
-            <img src={leftarrow} alt="" />
+            <img src={leftarrow} alt="" onClick={()=>setnoteorselected(true)}/>
                 <div className="group">
                     <div className="groupicon">
                         <img src={groupdata[groupnumber]?.groupcolor} alt="" />
@@ -82,7 +82,7 @@ function SelectedNote({groupdata, groupnumber, setgroupdata}){
     )
     :
     (
-        <div className="background-cont">
+        <div className="background-cont" style={{display:"none"}}>
             <img src={backgroundimg} alt="" />
             <h2>Pocket Notes</h2>
             <p>Send and receive messages without keeping your phone online.
